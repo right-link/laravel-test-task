@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreActorRequest;
+use App\Http\Requests\StoreActorsRequest;
 use App\Models\ActorSubmission;
 use App\Services\ActorParsingService;
 use Illuminate\Http\RedirectResponse;
@@ -18,13 +18,13 @@ class ActorSubmissionController extends Controller
         return view('actors.create');
     }
 
-    public function store(StoreActorRequest $request): RedirectResponse
+    public function store(StoreActorsRequest $request): RedirectResponse
     {
         $validated = $request->validated();
 
         $dto = $this->parsing->parse($validated['actor_description']);
 
-        if (!$dto->hasRequired()) {
+        if (!$dto?->hasRequired()) {
             return back()
                 ->withInput()
                 ->withErrors([
