@@ -20,7 +20,7 @@
     </nav>
 </header>
 <main class="isolate px-6 py-10 sm:py-12 lg:px-8 flex-1">
-    <div class="mx-auto max-w-3xl">
+    <div class="mx-auto max-w-4xl">
         @if (session('status'))
             <div class="mb-4 p-3 bg-green-100 text-green-800 rounded">
                 {{ session('status') }}

@@ -14,18 +14,24 @@
             <thead class="bg-gray-700">
             <tr>
                 <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">First Name</th>
+                <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Last Name</th>
                 <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Address</th>
                 <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Gender</th>
                 <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Height</th>
+                <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Weight</th>
+                <th class="text-left p-4 font-semibold text-sm uppercase tracking-wider">Age</th>
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-700">
             @forelse($submissions as $s)
                 <tr>
                     <td class="p-4 whitespace-nowrap">{{ $s->first_name }}</td>
+                    <td class="p-4 whitespace-nowrap">{{ $s->last_name }}</td>
                     <td class="p-4 whitespace-nowrap">{{ $s->address }}</td>
                     <td class="p-4 whitespace-nowrap">{{ $s->gender ?? '—' }}</td>
                     <td class="p-4 whitespace-nowrap">{{ $s->height ?? '—' }}</td>
+                    <td class="p-4 whitespace-nowrap">{{ $s->weight ?? '—' }}</td>
+                    <td class="p-4 whitespace-nowrap">{{ $s->age ?? '—' }}</td>
                 </tr>
             @empty
                 <tr>
